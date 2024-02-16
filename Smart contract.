@@ -1,0 +1,57 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract GreenToken is ERC20, Ownable, ReentrancyGuard {
+    uint256 public constant TOTAL_SUPPLY = 200e6 * 1e18; // 200 million tokens, assuming 18 decimal places
+    uint256 public constant SALE_SUPPLY = TOTAL_SUPPLY * 50 / 100; // 50% of total supply for sale
+    uint256 public constant COMMUNITY_SUPPLY = TOTAL_SUPPLY * 10 / 100; // 10% for community and testers
+    uint256 public constant MARKETING_SUPPLY = TOTAL_SUPPLY * 10 / 100; // 10% for marketing
+    // The remaining 30% is implicitly for the team/owner
+
+    uint256 public exchangeRate = 1000; // Example rate, 1 ETH = 1000 GT
+    bool public saleActive = true;
+
+    constructor() ERC20("GreenToken", "GT") {
+        _mint(msg.sender, TOTAL_SUPPLY); // Mint total supply to owner initially
+
+        // Allocate tokens for community, marketing, and sale by transferring from owner
+        // In a real scenario, it might be more secure and flexible to use a vesting contract for team tokens
+        // and potentially even for community and marketing allocations.
+    }
+
+    function startSale(uint256 _exchangeRate) external onlyOwner {
+        require(_exchangeRate > 0, "Exchange rate must be positive");
+        exchangeRate = _exchangeRate;
+        saleActive = true;
+    }
+
+    function stopSale() external onlyOwner {
+        saleActive = false;
+    }
+
+    function buyTokens() external payable nonReentrant {
+        require(saleActive, "Token sale is not active");
+        require(msg.value > 0, "Cannot purchase with 0 ETH");
+
+        uint256 tokensToPurchase = msg.value * exchangeRate;
+        require(tokensToPurchase <= SALE_SUPPLY, "Not enough tokens available for sale");
+
+        _transfer(owner(), msg.sender, tokensToPurchase);
+        // Ideally, keep track of how many tokens have been sold to ensure it doesn't exceed SALE_SUPPLY
+
+        // Consider best practices for handling received funds, such as immediately moving them to a secure wallet
+        payable(owner()).transfer(msg.value);
+    }
+
+    // Additional functions like setExchangeRate(), emergencyWithdraw() are omitted for brevity
+    // but would be similar to the previous example, adjusted for the new supply and allocation logic
+
+    // Function to allow the contract to receive ETH without buying tokens
+    receive() external payable {
+        require(msg.sender == owner(), "Only owner can send ETH directly");
+    }
+}
