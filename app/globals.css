@@ -116,6 +116,10 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
 .contact-inner h2 em { color: var(--green); }
 .button--light { background: var(--green); color: var(--ink); }
 .button--light span { font-size: 17px; }
+.contact-channels { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 19px; }
+.contact-channels a { color: #d6d9cf; font-size: 11px; border-bottom: 1px solid #596054; padding-bottom: 5px; transition: color .2s ease, border-color .2s ease; }
+.contact-channels a:hover { color: var(--green); border-color: var(--green); }
+.contact-channels a span { color: var(--green); margin-left: 5px; }
 .contact-aside { position: absolute; right: 0; bottom: 10px; color: #a0a69a; font-size: 8px; }
 .footer { min-height: 94px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .footer > p { margin: 0; color: #83877c; font-size: 10px; }
@@ -174,6 +178,7 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
   .about-side .side-rule { display: block; }
   .contact-section { padding: 70px 0 75px; }
   .contact-inner h2 { font-size: 45px; }
+  .contact-channels { gap: 17px; margin-top: 17px; }
   .contact-aside { position: static; margin-top: 28px; line-height: 1.7; }
   .footer { padding-top: 23px; padding-bottom: 23px; flex-wrap: wrap; }
   .footer > p { order: 3; width: 100%; }
