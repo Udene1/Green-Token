@@ -98,7 +98,7 @@ export default function Home() {
           <a href="#approach">Approach</a>
           <a href="#about">About</a>
         </nav>
-        <a className="nav-cta" href="https://x.com/smart_web3boy" target="_blank" rel="noreferrer">Start a conversation <span>↗</span></a>
+        <a className="nav-cta" href="mailto:kennethikechukwu159@gmail.com">Email me <span>↗</span></a>
       </div>
 
       <section className="hero section-wrap" id="top">
@@ -208,6 +208,8 @@ export default function Home() {
           <div className="about-links">
             <a href="https://github.com/Udene1" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
             <a href="https://x.com/smart_web3boy" target="_blank" rel="noreferrer">X / @smart_web3boy <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/kenneth-elioku-890467137/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+            <a href="mailto:kennethikechukwu159@gmail.com">Email <span>↗</span></a>
           </div>
         </div>
         <div className="about-side">
@@ -223,7 +225,11 @@ export default function Home() {
         <div className="section-wrap contact-inner">
           <p className="section-label">HAVE A REAL PROBLEM TO SOLVE?</p>
           <h2>Let’s build something<br /><em>that can be relied on.</em></h2>
-          <a className="button button--light" href="https://x.com/smart_web3boy" target="_blank" rel="noreferrer">Message me on X <span>↗</span></a>
+          <a className="button button--light" href="mailto:kennethikechukwu159@gmail.com">Email me about your project <span>↗</span></a>
+          <div className="contact-channels" aria-label="Other ways to connect">
+            <a href="https://x.com/smart_web3boy" target="_blank" rel="noreferrer">X / @smart_web3boy <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/kenneth-elioku-890467137/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          </div>
           <div className="contact-aside">Roles · Projects · Consulting · Partnerships</div>
         </div>
       </section>
