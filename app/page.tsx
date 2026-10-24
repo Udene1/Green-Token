@@ -6,7 +6,7 @@ const projects = [
     description:
       "A compliance automation platform built around asynchronous execution, multi-cloud integrations, persisted execution graphs, and verifiable audit evidence.",
     proof: ["Worker and queue architecture", "Evidence fingerprints and manifests", "Control-to-resource traceability"],
-    href: "https://github.com/Udene1/Compflow",
+    href: "/work/compflow",
     status: "Flagship engineering case study",
     className: "project-card project-card--wide"
   },
@@ -165,7 +165,7 @@ export default function Home() {
               <ul className="proof-list">
                 {project.proof.map((item) => <li key={item}><span>↳</span>{item}</li>)}
               </ul>
-              <a className="project-link" href={project.href} target="_blank" rel="noreferrer">Explore repository <span>↗</span></a>
+              <a className="project-link" href={project.href} target="_blank" rel="noreferrer">{project.name === "Compflow" ? "Read engineering case study" : "Explore repository"} <span>↗</span></a>
             </article>
           ))}
         </div>
