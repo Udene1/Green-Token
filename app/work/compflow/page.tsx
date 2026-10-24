@@ -130,7 +130,20 @@ export default function CompflowCaseStudy() {
 
       <section className="case-section">
         <div className="case-wrap">
-          <p className="case-label">02 / ENGINEERING DECISIONS</p>
+          <p className="case-label">02 / ENGINEERING UNDER CONSTRAINT</p>
+          <h2>Designing for <em>the cost of staying alive.</em></h2>
+          <p className="case-section-intro">Compflow began as a small scanner on Vercel. As the product grew, its hosting path moved through AWS Lambda, EC2, and Azure. These moves were not a checklist of cloud platforms; they were attempts to keep a real product usable while balancing available credits, operating cost, security, and reliability.</p>
+          <div className="case-decisions">
+            <article className="case-decision"><h3>Keep the product operable</h3><p>Every infrastructure change brings deployment work, configuration changes, and new failure modes. The goal is not to adopt the largest stack, but to keep the required workflow running.</p></article>
+            <article className="case-decision"><h3>Make cost a design constraint</h3><p>A product that works only while promotional credits last is not economically sustainable. The architecture has to be judged by the minimum dependable setup that preserves its important behaviour—not just by whether it can be deployed.</p></article>
+          </div>
+          <div className="case-caution">This history describes the builder's actual account of the product's evolution. It does not claim that the current deployment is live or that one hosting option has already been proven cheapest. Those require a measured deployment test.</div>
+        </div>
+      </section>
+
+      <section className="case-section">
+        <div className="case-wrap">
+          <p className="case-label">03 / ENGINEERING DECISIONS</p>
           <h2>Reliability is in the <em>edges.</em></h2>
           <p className="case-section-intro">These are specific implementation patterns visible in the source—not claims that every production scenario has already been validated.</p>
           <div className="case-decisions">
@@ -144,10 +157,10 @@ export default function CompflowCaseStudy() {
           <p className="case-label">03 / SOURCE-LEVEL EVIDENCE</p>
           <h2>What a reviewer can <em>inspect.</em></h2>
           <div className="case-proof">
-            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Execution graph and resume logic</strong><span><code>api/execution-graph.js</code> reads persisted execution state, emits sequenced audit events, and builds a resume plan.</span></div></div>
-            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Live job stream</strong><span><code>api/job-stream.js</code> establishes organization context before opening SSE and cleans up listeners on disconnect.</span></div></div>
-            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Worker outcome persistence</strong><span><code>core/cloud_scan_worker.js</code> records progress, findings, evidence counts, completion state, and scan failure details.</span></div></div>
-            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Auditor evidence path</strong><span><code>core/auditor_portal.js</code> and related APIs implement export and verification components for evidence artifacts.</span></div></div>
+            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Execution graph and resume logic</strong><span><a href="https://github.com/Udene1/Compflow/blob/main/api/execution-graph.js" target="_blank" rel="noreferrer"><code>api/execution-graph.js</code> ↗</a> reads persisted execution state, emits sequenced audit events, and builds a resume plan.</span></div></div>
+            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Live job stream</strong><span><a href="https://github.com/Udene1/Compflow/blob/main/api/job-stream.js" target="_blank" rel="noreferrer"><code>api/job-stream.js</code> ↗</a> establishes organization context before opening SSE and cleans up listeners on disconnect.</span></div></div>
+            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Worker outcome persistence</strong><span><a href="https://github.com/Udene1/Compflow/blob/main/core/cloud_scan_worker.js" target="_blank" rel="noreferrer"><code>core/cloud_scan_worker.js</code> ↗</a> records progress, findings, evidence counts, completion state, and scan failure details.</span></div></div>
+            <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Auditor evidence path</strong><span><a href="https://github.com/Udene1/Compflow/blob/main/core/auditor_portal.js" target="_blank" rel="noreferrer"><code>core/auditor_portal.js</code> ↗</a> and related APIs implement export and verification components for evidence artifacts.</span></div></div>
           </div>
           <div className="case-caution"><strong>Verification boundary:</strong> source code shows the intended mechanisms, but it does not by itself prove a live deployment is healthy. The next engineering check is to run the relevant test suites and verify the full lifecycle against a configured environment—including reconnect/resume, failed scans, evidence export, and tamper detection. No performance numbers or production-readiness claims are made on this page.</div>
         </div>
