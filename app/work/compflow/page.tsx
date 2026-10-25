@@ -154,7 +154,7 @@ export default function CompflowCaseStudy() {
 
       <section className="case-section">
         <div className="case-wrap">
-          <p className="case-label">03 / SOURCE-LEVEL EVIDENCE</p>
+          <p className="case-label">04 / SOURCE-LEVEL EVIDENCE</p>
           <h2>What a reviewer can <em>inspect.</em></h2>
           <div className="case-proof">
             <div className="case-proof-row"><span className="case-proof-mark">↗</span><div><strong>Execution graph and resume logic</strong><span><a href="https://github.com/Udene1/Compflow/blob/main/api/execution-graph.js" target="_blank" rel="noreferrer"><code>api/execution-graph.js</code> ↗</a> reads persisted execution state, emits sequenced audit events, and builds a resume plan.</span></div></div>
