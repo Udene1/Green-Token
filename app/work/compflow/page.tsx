@@ -137,7 +137,7 @@ export default function CompflowCaseStudy() {
             <article className="case-decision"><h3>Keep the product operable</h3><p>Every infrastructure change brings deployment work, configuration changes, and new failure modes. The goal is not to adopt the largest stack, but to keep the required workflow running.</p></article>
             <article className="case-decision"><h3>Make cost a design constraint</h3><p>A product that works only while promotional credits last is not economically sustainable. The architecture has to be judged by the minimum dependable setup that preserves its important behaviour—not just by whether it can be deployed.</p></article>
           </div>
-          <div className="case-caution">This history describes the builder's actual account of the product's evolution. It does not claim that the current deployment is live or that one hosting option has already been proven cheapest. Those require a measured deployment test.</div>
+          <div className="case-caution">This history describes the builder&apos;s actual account of the product&apos;s evolution. It does not claim that the current deployment is live or that one hosting option has already been proven cheapest. Those require a measured deployment test.</div>
         </div>
       </section>
 
