@@ -37,10 +37,10 @@ const projects = [
     name: "Cashflow OS",
     type: "Commercial operations · Automation",
     description:
-      "An operational workspace for lead discovery, research, outreach, contact activity, and commercial follow-through—where state should reflect what actually happened.",
+      "An internal workspace for recording prospect research, outreach, contact activity, and commercial follow-through. Lead discovery quality is still being improved.",
     proof: ["Persistent activity history", "Gmail-connected outreach", "Lead-to-conversation workflow"],
     href: "https://github.com/Udene1/Cashflow-os",
-    status: "Operational build",
+    status: "Internal sales workflow",
     className: "project-card"
   },
   {
