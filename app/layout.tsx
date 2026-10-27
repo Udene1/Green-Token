@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Kenneth Elioku, a backend and systems engineer building dependable APIs, cloud compliance systems, durable workflows, and evidence-driven software.",
   applicationName: "Kenneth Elioku Portfolio",
+  verification: {
+    google: "laGD1NBZAFPuldneOeBjbe7wIjFIy3mghLxv-Y1UL20"
+  },
   authors: [{ name: "Kenneth Elioku", url: siteUrl }],
   creator: "Kenneth Elioku",
   keywords: [
