@@ -1,3 +1,5 @@
+import ServicesSection from "../components/ServicesSection";
+
 const projects = [
   {
     number: "01",
@@ -95,6 +97,7 @@ export default function Home() {
         </a>
         <nav className="nav" aria-label="Main navigation">
           <a href="#work">Selected work</a>
+          <a href="#services">Services</a>
           <a href="#approach">Approach</a>
           <a href="#about">About</a>
         </nav>
@@ -171,6 +174,8 @@ export default function Home() {
         </div>
         <p className="work-footnote"><span>↳</span> Status is intentionally explicit: a working codebase, a prototype, and a polished public product are not the same thing.</p>
       </section>
+
+      <ServicesSection />
 
       <section className="approach-section" id="approach">
         <div className="section-wrap approach-inner">
